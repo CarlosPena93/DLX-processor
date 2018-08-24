@@ -1,0 +1,78 @@
+library ieee; 
+use ieee.std_logic_1164.all; 
+use ieee.std_logic_unsigned.all;
+use WORK.constants.all;
+
+entity CARRY_GENERATOR2 is 
+	generic(N_BIT:integer;NumBit:integer;CBIT:integer);
+	port(
+		A: in std_logic_vector(NumBit-1 downto 0);
+		B: in std_logic_vector(NumBit-1 downto 0);
+		Cin: in std_logic;
+		Cout: out std_logic_vector(CBIT-1 downto 0)) ; --we dont use cin0
+end CARRY_GENERATOR2;
+
+architecture structural of CARRY_GENERATOR2 is
+
+
+component GEN1  -- the general generate
+	generic(N_BIT:integer);
+	port(
+		A: in std_logic_vector(N_bit-1 downto 0);
+		B: in std_logic_vector(N_bit-1 downto 0);
+		Cin: in std_logic;
+		Gout: out std_logic);
+end component;
+
+component GEN2  -- the general generate
+	generic(N_BIT:integer);
+	port(
+		A: in std_logic_vector(N_bit-1 downto 0);
+		B: in std_logic_vector(N_bit-1 downto 0);
+		Gout: out std_logic);
+end component;
+
+component PROPAGATE-- the general propagate
+	generic(N_BIT:integer);
+	port(
+		A: in std_logic_vector(N_bit-1 downto 0);
+		B: in std_logic_vector(N_bit-1 downto 0);
+		Pout: out std_logic);
+end component;
+
+signal Gen_signal_vector :std_logic_vector(CBIT-1 downto 0);-- contains all the values of the calculated generates
+signal prop_signal_vector:std_logic_vector(CBIT-1 downto 1); -- contains all the values of the calculated propagates.We don't need the first propagte
+signal carry_signal_vector:std_logic_vector(CBIT-1 downto 0);-- signal containing all the carries
+
+	
+begin
+
+	
+	firstgen1: GEN1 --we instantiate the first generate that is diferent from the others because of the number of bits G(4:1)
+		generic map(N_bit)
+		port map(A(N_bit-1 downto 0),B(N_bit-1 downto 0),Cin,Gen_Signal_vector(0));
+ 	carry_signal_vector(0)<=Gen_Signal_vector(0); --the first generate is the first carry 
+
+	--the next cycle follow this patern :
+		--G(24:1)=G(24:21)+P(24:21)*G(16:1)
+		--note that in this case G(16:1) must always be the previous carry.this way we can start from the first carry and calculate the second from the first one and the third from the second one and so on
+		
+	NETS:for I in 2 to CBIT generate  --this cycle permits us to create all the carries
+		cablesgen:GEN2
+			generic map(N_bit)
+			Port Map(A(I*N_bit-1 downto (I*N_bit-N_bit)),B(I*N_bit-1 downto (I*N_bit-N_bit)),Gen_signal_vector(I-1));--conects to the generate the a part of the input A and B depending on the number of bits and on the output we conect to the Gen_signal vector
+
+		cablesprop:PROPAGATE
+			generic map(N_bit)
+			Port Map(A(I*N_bit-1 downto (I*N_bit-N_bit)),B(I*N_bit-1 downto (I*N_bit-N_bit)),prop_signal_vector(I-1));--we follow the same procedure as before 
+	
+		carry_signal_vector(I-1)<= Gen_signal_vector(I-1) or (prop_signal_vector(I-1) and carry_signal_vector(I-2));
+	end generate;-- ones we have calculated the values of the gens and the propagate we calculate the carry using the previous carry
+	
+	carriesout: for I in CBIT-1 downto 0 generate -- we assing all the carrys to the output
+		cout(I)<=carry_signal_vector(I);
+	
+	end generate;
+	     
+
+end structural;
