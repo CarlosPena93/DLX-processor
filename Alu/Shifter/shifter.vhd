@@ -1,0 +1,129 @@
+
+library ieee; 
+use ieee.std_logic_1164.all; 
+use ieee.std_logic_unsigned.all;
+use WORK.constants.all;
+
+
+entity shifter is 
+	generic(NumBit:integer;grain_number:integer;small_grain:integer);--
+	port(
+		R1: in std_logic_vector(NumBit-1 downto 0);
+		R2: in std_logic_vector((log2(numbit/grain_number)+log2(small_grain))-1 downto 0);-- becasue numbit is 32 bits is 4 downto 0
+		Config: in std_logic_vector(1 downto 0);-- shift left shift right, aritmetic 
+		reset: in std_logic;
+		Output: out std_logic_vector(NumBit-1 downto 0));
+end shifter;
+
+
+
+architecture behavioral of shifter is
+
+component MUX_generic 
+	generic(NumBit:integer;Inputs:integer);
+	Port (	Input:	In	std_logic_vector(Numbit*Inputs-1 downto 0); 
+		S:	In	std_logic_vector(log2(Inputs)-1 downto 0);
+                reset: In std_logic;
+		Outputs:	Out	std_logic_vector(Numbit-1 downto 0));
+end component;
+
+
+type masks is array ((NumBit/grain_number)-1 downto 0) of std_logic_vector((Numbit+grain_number)-1 downto 0);--type used for all the masks
+
+signal control1: std_logic_vector((Log2(numbit/grain_number)+2)-1 downto 0);
+
+signal control2:std_logic_vector(log2(small_grain)-1 downto 0)
+;
+signal Shift_left_L,shift_right_L,Shift_left_A,shift_right_A :masks;-- signal correspondig to the demux that activates the diferentes registers
+
+signal Grain_num_Logic: std_logic_vector(grain_number-1 downto 0):=(others=>'0');
+
+signal Grain_num_Arit: std_logic_vector(grain_number-1 downto 0);
+signal temporal_mux1_out: std_logic_vector((NumBit+grain_number)-1 downto 0);
+
+signal temporal_mux1: std_logic_vector((Numbit+grain_number)*(Numbit/Grain_number)*4-1 downto 0);
+
+signal temporal_mux2: std_logic_vector((Numbit+grain_number*2)*((Numbit/Grain_number)-1)*4-1 downto 0);
+
+
+
+begin
+
+	control1<= config & R2((Log2(numbit/grain_number)+log2(small_grain)+2)-1 downto log2(small_grain)));
+
+	control2<=R2(log2(small_grain)-1 downto 0);
+	
+	Grain_num_Logic<=(others=>R1(Numbit-1));-- we use the most significant bit for the aritmetif shift
+
+
+	temporal_mux1((Numbit+grain_number-1) downto 0)<=R1 & Grain_num_Logic;
+        --temporal_mux1((Numbit+grain_number)-1 downto 0)<=shift_left_L(0);
+	Left_mask_Logic:for I in 1 to  numbit/grain_number-1  generate
+		temporal_mux2((I*(numbit+grain_number*2)-1) downto (I-1)*(numbit+grain_number*2))<=temporal_mux1((I*(numbit+grain_number)-1) downto (I-1)*(numbit+grain_number))& grain_num_logic;
+		
+		temporal_mux1((I+1*(numbit+grain_number)-1) downto (I)*(numbit+grain_number))<=temporal_mux2((I*(numbit+grain_number*2)-1) downto ((I-1)*(numbit+grain_number*2)+Grain_number));
+
+	end generate;
+
+
+
+
+
+	temporal_mux1((numbit/grain_number)*(Numbit+grain_number-1) downto ((numbit/grain_number)-1)*(numbit+grain_number*2))<=Grain_num_Logic & R1;
+
+	Right_mask_Logic:for I in 1 to  numbit/grain_number-1  generate
+	
+		temporal_mux2(((I+(numbit/grain_number))*(numbit+grain_number*2)-1) downto ((I+(numbit/grain_number)-1)*(numbit+grain_number*2)))<=grain_num_Logic & temporal_mux1((I*(numbit+grain_number)-1) downto (I-1)*(numbit+grain_number));
+		
+		temporal_mux1(((I+1+(numbit/grain_number))*(numbit+grain_number)-1) downto ((I+(numbit/grain_number))*(numbit+grain_number)))<=temporal_mux2(((I+(numbit/grain_number))*(numbit+grain_number*2)-1) downto ((I+(numbit/grain_number)-1)*(numbit+grain_number*2))+Grain_number);
+
+	end generate;
+
+
+
+
+	temporal_mux1(2*(numbit/grain_number)*(Numbit+grain_number-1) downto (2*(numbit/grain_number)-1)*(numbit+grain_number*2))<= R1 & Grain_num_Arit;
+
+	Left_mask_Arithmetic:for I in 1 to  numbit/grain_number-1  generate
+	
+		temporal_mux2(((I+2*(numbit/grain_number))*(numbit+grain_number*2)-1) downto ((I+2*(numbit/grain_number)-1)*(numbit+grain_number*2)))<=temporal_mux1((I*(numbit+grain_number)-1) downto (I-1)*(numbit+grain_number))& Grain_num_Arit;
+		
+		temporal_mux1(((I+1+2*(numbit/grain_number))*(numbit+grain_number)-1) downto (I+2*(numbit/grain_number))*(numbit+grain_number))<=temporal_mux2(((I+2*(numbit/grain_number))*(numbit+grain_number*2)-1) downto ((I+2*(numbit/grain_number)-1)*(numbit+grain_number*2))+Grain_number);
+
+	end generate;
+
+
+
+
+
+	temporal_mux1(3*(numbit/grain_number)*(Numbit+grain_number-1) downto (3*(numbit/grain_number)-1)*(numbit+grain_number*2))<=Grain_num_arit & R1;
+
+
+	Right_mask_Aritmetic:for I in 1 to  numbit/grain_number-1  generate
+	
+		temporal_mux2(((I+3*(numbit/grain_number))*(numbit+grain_number*2)-1) downto ((I-3*(numbit/grain_number)-1)*(numbit+grain_number*2)))<=Grain_num_Arit & temporal_mux1((I*(numbit+grain_number)-1) downto (I-1)*(numbit+grain_number));
+		
+		temporal_mux1(((I+3*(numbit/grain_number)+1)*(numbit+grain_number)-1) downto (I+3*(numbit/grain_number))*(numbit+grain_number))<=temporal_mux2(((I+3*(numbit/grain_number))*(numbit+grain_number*2)-1) downto ((I+3*(numbit/grain_number)-1)*(numbit+grain_number*2))+Grain_number);
+
+	end generate;
+
+        
+    
+    
+    MUX_grain_num:mux_generic-- there is one decoder for write addres and 2 for read adress
+                    generic map(Numbit+Grain_number,4*Numbit/grain_number)
+                    port map (temporal_mux1,control,reset,temporal_mux1_out);
+
+	temporal
+  
+  
+	MUX_small_grain:mux_generic-- there is one decoder for write addres and 2 for read adress
+                    generic map(1,4*Numbit/grain_number)
+                    port map (temporal_mux1,control,reset,temporal_mux2_out);
+
+  
+
+	
+	    
+end behavioral;
+
