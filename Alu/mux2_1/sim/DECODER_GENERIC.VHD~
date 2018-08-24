@@ -1,0 +1,44 @@
+library IEEE;
+use IEEE.std_logic_1164.all; --  libreria IEEE con definizione tipi standard logic
+use WORK.constants.all; -- libreria WORK user-defined
+
+entity DECODER_GENERIC is
+	generic(N_bit:integer);
+	Port (	A:	In	std_logic_vector(N_bit-1 downto 0);
+		enable:	In	std_logic;
+		Y:	Out	std_logic_vector(2(ELEVADO N_BIT)-1 downto 0));
+end DECODER_GENERIC;
+
+
+architecture STRUCTURAL of MUX21 is
+
+	signal AS: std_logic_vector(N_bit-1 downto 0);--1 downto 0 a y b y c
+	signal AN: std_logic_vector(N_bit-1 downto 0);--1 downto 0 an y bn y cn
+	signal SB: std_logic;
+
+	component ND2_generic
+	generic(N_bit:integer);
+	Port (	A:	IN std_logic_vector(N_bit-1 downto 0);
+		Y:	Out	std_logic);
+	end component;
+	
+	component IV
+	
+	Port (	A:	In	std_logic;
+		Y:	Out	std_logic);
+	end component;
+
+begin
+
+	INVERTERS:for i in N_BIT-1 downto 0 generate
+		IVS:IV
+			Port Map(AS(i),AN(i));
+	end generate;
+
+	NANDS:for i in 2 ALA N_BIT-1 downto 0 generate
+		nands2:ND2_generic
+			generic map(N_bit);
+			Port Map(AS(i),AN(i));
+	end generate;
+	
+end STRUCTURAL;

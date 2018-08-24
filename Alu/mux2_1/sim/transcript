@@ -1,0 +1,23 @@
+# //  ModelSim SE 6.2g Feb 21 2007 Linux 2.6.18-410.el5
+# //
+# //  Copyright 1991-2007 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+vsim work.tbmux21_struct_generic(test_struct)
+# vsim work.tbmux21_struct_generic(test_struct) 
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading /software/mentor/modelsim_6.2g/linux/../std.standard
+# Loading /software/mentor/modelsim_6.2g/linux/../ieee.std_logic_1164(body)
+# Loading work.constants
+# Loading work.tbmux21_struct_generic(test_struct)#1
+# Loading work.mux21_struct_generic(structural)#1
+# Loading work.mux21_struct(structural)
+# Loading work.iv(behavioral)
+# Loading work.nd2(arch2)
+add waves *
+run 20 ns

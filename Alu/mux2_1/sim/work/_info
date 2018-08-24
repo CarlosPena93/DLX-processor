@@ -1,0 +1,279 @@
+m255
+13
+cModel Technology
+d/home/ms18.4/Desktop/gr04_lab01/ex1/sim
+T_opt
+V:MnS6M77iRFQZ[2z=d4cV2
+06 21 8 ./work tbmux21_behav_generic test_bev 1
+o-quiet -auto_acc_if_foreign -work work
+tExplicit 1
+OE;O;6.2g;35
+T_opt1
+V;K2Pgabm^AJEcoTaDULe82
+06 22 11 ./work tbmux21_struct_generic test_struct 1
+o-quiet -auto_acc_if_foreign -work work
+tExplicit 1
+OE;O;6.2g;35
+Ccfg_iv_behavioral
+abehavioral
+eiv
+DA work iv behavioral ^0?lgn=H@Bc<_4RC?MGV@2
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work iv lFb5Ug?Idnd_iWZJJ4jzN3
+w1521116090
+8/home/ms18.4/Desktop/gr04_lab01/ex1/sim/iv.vhd
+F/home/ms18.4/Desktop/gr04_lab01/ex1/sim/iv.vhd
+l0
+L19
+VWH56f4PKoMBg;FBLRZ5962
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 work constants
+o-work work
+tExplicit 1
+Ccfg_nd2_arch1
+aarch1
+end2
+DA work nd2 arch1 I36SYmHi]nRgIo_aJ4o5P2
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work nd2 512PoiB35e]^aGPk^C6JL2
+w1521110239
+8/home/ms18.4/Desktop/gr04_lab01/ex1/sim/nd2.vhd
+F/home/ms18.4/Desktop/gr04_lab01/ex1/sim/nd2.vhd
+l0
+L37
+V:XBdj6`DzmijAie:_?bIi1
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 work constants
+o-work work
+tExplicit 1
+Ccfg_nd2_arch2
+aarch2
+end2
+DA work nd2 arch2 Pk9eQVTZ2I<:ld9BY`k181
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work nd2 512PoiB35e]^aGPk^C6JL2
+w1521110239
+8/home/ms18.4/Desktop/gr04_lab01/ex1/sim/nd2.vhd
+F/home/ms18.4/Desktop/gr04_lab01/ex1/sim/nd2.vhd
+l0
+L42
+V_oVZbjFSNN<XXJO`M?d?=3
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 work constants
+o-work work
+tExplicit 1
+Pconstants
+w1521483473
+8/home/ms18.4/Desktop/gr04_lab01/ex1/sim/constants.vhd
+F/home/ms18.4/Desktop/gr04_lab01/ex1/sim/constants.vhd
+l0
+L1
+V9imm65>c[G@<73j:bUdo@0
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Eiv
+w1521116090
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab01/ex1/sim/iv.vhd
+F/home/ms18.4/Desktop/gr04_lab01/ex1/sim/iv.vhd
+l0
+L5
+VlFb5Ug?Idnd_iWZJJ4jzN3
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Abehavioral
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work iv lFb5Ug?Idnd_iWZJJ4jzN3
+l13
+L11
+V^0?lgn=H@Bc<_4RC?MGV@2
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 work constants
+o-work work
+tExplicit 1
+Emux21_behav_generic
+w1522095909
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab01/ex1/sim/mux21_behav_generic.vhd
+F/home/ms18.4/Desktop/gr04_lab01/ex1/sim/mux21_behav_generic.vhd
+l0
+L5
+V9PIbg4@U6^1hQ`hN1bIjV3
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Abehavioral
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work mux21_behav_generic 9PIbg4@U6^1hQ`hN1bIjV3
+l17
+L15
+V1I1mzQ;:O;LNJQlnH<l]?2
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 work constants
+o-work work
+tExplicit 1
+Emux21_struct
+w1522111404
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab01/ex1/sim/mux21_struct.vhd
+F/home/ms18.4/Desktop/gr04_lab01/ex1/sim/mux21_struct.vhd
+l0
+L5
+VIWi3fJfS3`CoEb7feNQ[Y3
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Astructural
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work mux21_struct IWi3fJfS3`CoEb7feNQ[Y3
+l31
+L12
+Vcz6am9lUziGni1Q4oLGiK1
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 work constants
+o-work work
+tExplicit 1
+Emux21_struct_generic
+w1522094578
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab01/ex1/sim/mux21_struct_generic.vhd
+F/home/ms18.4/Desktop/gr04_lab01/ex1/sim/mux21_struct_generic.vhd
+l0
+L5
+VH76Y]SkYHTggc;oVF<?Jd2
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Astructural
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work mux21_struct_generic H76Y]SkYHTggc;oVF<?Jd2
+l23
+L15
+VY8l1_Gi]Ra3C<@Yi@FW1T0
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 work constants
+o-work work
+tExplicit 1
+End2
+w1521110239
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab01/ex1/sim/nd2.vhd
+F/home/ms18.4/Desktop/gr04_lab01/ex1/sim/nd2.vhd
+l0
+L5
+V512PoiB35e]^aGPk^C6JL2
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Aarch2
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work nd2 512PoiB35e]^aGPk^C6JL2
+l21
+L19
+VPk9eQVTZ2I<:ld9BY`k181
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 work constants
+o-work work
+tExplicit 1
+Aarch1
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work nd2 512PoiB35e]^aGPk^C6JL2
+l14
+L12
+VI36SYmHi]nRgIo_aJ4o5P2
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 work constants
+o-work work
+tExplicit 1
+Etbmux21_behav_generic
+w1522179695
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab01/ex1/sim/tb_mux21_behav_generic.vhd
+F/home/ms18.4/Desktop/gr04_lab01/ex1/sim/tb_mux21_behav_generic.vhd
+l0
+L6
+V^n=zk[EG8?TZ9J=dgmngD2
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Atest_bev
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work tbmux21_behav_generic ^n=zk[EG8?TZ9J=dgmngD2
+l29
+L9
+Vj0]gkJgOM<34LYU;aibON2
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 work constants
+o-work work
+tExplicit 1
+Etbmux21_struct_generic
+w1522094995
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab01/ex1/sim/tb_mux21_struct_generic.vhd
+F/home/ms18.4/Desktop/gr04_lab01/ex1/sim/tb_mux21_struct_generic.vhd
+l0
+L6
+V2T?GJ7H49]?P6IZjBD6oN2
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Atest_struct
+DP work constants 9imm65>c[G@<73j:bUdo@0
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work tbmux21_struct_generic 2T?GJ7H49]?P6IZjBD6oN2
+l27
+L9
+V9<SK]eZ>JG2Q9>eB9NVjb0
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 work constants
+o-work work
+tExplicit 1

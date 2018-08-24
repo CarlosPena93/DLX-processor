@@ -1,0 +1,16 @@
+H 2141964 11 3 0 6 6 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 6 ./work
+D 16 ./work.constants 9imm65>c[G@<73j:bUdo@0 0 1
+D 21 ./work.iv(behavioral) ^0?lgn=H@Bc<_4RC?MGV@2 1 1
+D 31 ./work.mux21_struct(structural) cz6am9lUziGni1Q4oLGiK1 3 1
+D 39 ./work.mux21_struct_generic(structural) Y8l1_Gi]Ra3C<@Yi@FW1T0 4 1
+D 17 ./work.nd2(arch2) Pk9eQVTZ2I<:ld9BY`k181 2 1
+D 42 ./work.tbmux21_struct_generic(test_struct) 9<SK]eZ>JG2Q9>eB9NVjb0 5 1
+2 0  1 `0jF>M_H?GB_LLbF=`]fd2 5 5 1
+2 0  1 T<0aG<ZSYjUOlknfUX><]3 4 4 1
+2 0  0 <Zk8^zQNdg:kGQGe_3mHo1 3 3 1
+2 0  0 FnGILJ6`a7cmk6Y]UQS[b3 2 2 1
+2 0  0 LIE]mV>CXVIemPVm<^4Z43 1 1 1
+2 0  0 bBaG0ZW_=aC<Yz]0>YBiM2 0 0 1

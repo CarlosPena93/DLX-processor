@@ -1,0 +1,10 @@
+H 2141964 11 3 0 3 3 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 6 ./work
+D 16 ./work.constants 9imm65>c[G@<73j:bUdo@0 0 1
+D 38 ./work.mux21_behav_generic(behavioral) 1I1mzQ;:O;LNJQlnH<l]?2 1 1
+D 38 ./work.tbmux21_behav_generic(test_bev) j0]gkJgOM<34LYU;aibON2 2 1
+2 0  0 bBaG0ZW_=aC<Yz]0>YBiM2 0 0 1
+2 0  1 n]jj80S4OF>P;CBz2SZ5K2 1 1 1
+2 0  1 JQ8Ko7W=WENGzK3T?W<I@3 2 2 1
