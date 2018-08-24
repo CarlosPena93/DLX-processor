@@ -1,0 +1,123 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.std_logic_arith.all;
+use IEEE.Numeric_Std.all;
+use work.myTypes.all;
+
+entity cu_test_UP is
+	generic(MEM_SIZE : integer := 19;--ARRAY FOR THE NUMBER OF FUNCTIONS
+		CONTROL_w: integer := 11;--vector containing the configuration of the signal
+		FUNC_SIZE          :     integer := 11;  -- Func Field Size for R-Type Ops
+    		OP_CODE_SIZE       :     integer := 6;  -- Op Code Size
+    		ALU_OPC_SIZE       :     integer := 2;  -- ALU Op Code Word Size
+    		IR_SIZE            :     integer := 32;  -- Instruction Register Size  
+		MICROCODE_MEM_SIZE : integer := 164;  -- Microcode Memory Size
+		INSTRUCTIONS_EXECUTION_CYCLES: integer:=3;
+    		RELOC_MEM_SIZE     : integer := 64  -- Microcode Relocation
+	);
+end cu_test_UP;
+
+architecture TEST of cu_test_UP is
+
+component CU_DLX_MP2
+
+       	port (
+              -- FIRST PIPE STAGE OUTPUTS
+              EN1    : out std_logic;               -- enables the register file and the pipeline registers
+              RF1    : out std_logic;               -- enables the read port 1 of the register file
+              RF2    : out std_logic;               -- enables the read port 2 of the register file
+              WF1    : out std_logic;               -- enables the write port of the register file
+              -- SECOND PIPE STAGE OUTPUTS
+              EN2    : out std_logic;               -- enables the pipe registers
+              S1     : out std_logic;               -- input selection of the first multiplexer
+              S2     : out std_logic;               -- input selection of the second multiplexer
+	      ALU_OPCODE: out std_logic_vector(ALU_OPC_SIZE-1 downto 0); 
+              --ALU1   : out std_logic;               -- alu control bit
+              --ALU2   : out std_logic;               -- alu control bit
+              -- THIRD PIPE STAGE OUTPUTS
+              EN3    : out std_logic;               -- enables the memory and the pipeline registers
+              RM     : out std_logic;               -- enables the read-out of the memory
+              WM     : out std_logic;               -- enables the write-in of the memory
+              S3     : out std_logic;               -- input selection of the multiplexer
+              -- INPUTS
+	      OPCODE : in  std_logic_vector(OP_CODE_SIZE - 1 downto 0);
+              FUNC   : in  std_logic_vector(FUNC_SIZE - 1 downto 0); 
+	      --IR_IN              : in  std_logic_vector(IR_SIZE - 1 downto 0);              
+              Clk : in std_logic;
+              Rst : in std_logic);                  -- Active Low
+end component;
+
+    signal Clock: std_logic := '0';
+    signal Reset: std_logic := '1';
+
+    signal cu_opcode_i: std_logic_vector(OP_CODE_SIZE - 1 downto 0) := (others => '0');
+    signal cu_func_i: std_logic_vector(FUNC_SIZE - 1 downto 0) := (others => '0');
+    signal EN1_i, RF1_i, RF2_i, WF1_i, EN2_i, S1_i, S2_i, EN3_i, RM_i, WM_i, S3_i: std_logic := '0';
+    signal ALU_OPCODE: std_logic_vector(ALU_OPC_SIZE-1 downto 0);             
+    signal func_int:integer;
+    signal counter :integer:=0;
+begin
+
+        -- instance of DLX
+       fsm : CU_DLX_MP2
+       port map (
+                 -- OUTPUTS
+                 EN1    => EN1_i,
+                 RF1    => RF1_i,
+                 RF2    => RF2_i,
+                 WF1    => WF1_i,
+                 EN2    => EN2_i,
+                 S1     => S1_i,
+                 S2     => S2_i,
+                 ALU_OPCODE   => ALU_OPCODE,
+                 --ALU2   => ALU2_i,
+                 EN3    => EN3_i,
+                 RM     => RM_i,
+                 WM     => WM_i,
+                 S3     => S3_i,
+                 -- INPUTS
+                 OPCODE => cu_opcode_i,
+                 FUNC   => cu_func_i,  
+                 Clk    => Clock,
+                 Rst    => Reset
+               );
+
+
+	PCLOCK : process(CLOCK)
+	begin
+		CLOCK <= not(CLOCK) after 0.5 ns;	
+	end process;
+
+	Reset <= '0', '1' after 6 ns;
+	
+	func_int <=(conv_integer(cu_func_i));
+	--opcode_int<=(conv_integer(func));
+
+
+        CONTROL: process(clock)
+        begin
+	if clock'event and clock='1' then
+		if counter < 3 then --rtype
+			counter<=counter+1;     
+		elsif cu_opcode_i=RTYPE then 
+			if func_int<3 then 
+				cu_func_i<=cu_func_i+1;
+				counter <= 0;
+			else
+				cu_opcode_i<=cu_opcode_i+1;
+				counter<=0;
+			end if;
+		
+		else 
+			if cu_opcode_i>14 then 
+				cu_opcode_i<=(others=>'0');
+			else
+			cu_opcode_i<=cu_opcode_i+1;
+			counter<=0;
+			end if;
+		end if;
+        end if;
+        end process;
+
+end test;

@@ -1,0 +1,10 @@
+H 2141964 11 3 0 3 3 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 6 ./work
+D 29 ./work.cu_dlx_mp2(dlx_cu_rtl) nWW35V;f:CAi<P8abb_DQ1 1 1
+D 23 ./work.cu_test_up(test) U6LTYNASJQ_HYAEhB5Y_l1 2 1
+D 14 ./work.mytypes AnBo7F8nR_2^TK12b3?:Q2 0 1
+2 0  0 eb?^?MiVk3@6_WGFeZe=@3 0 0 1
+2 0  1 6lazg9>R0nT^GJ^ej<h1U1 1 1 1
+2 0  1 _>ziT^A2ScSHGDhDAdBUg0 2 2 1

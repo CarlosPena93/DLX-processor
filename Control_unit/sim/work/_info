@@ -1,0 +1,90 @@
+m255
+13
+cModel Technology
+d/home/ms18.4/Desktop/gr04_lab4/ex4.4/sim
+T_opt
+Vm0gFO0PFmbVMSoXBk?d2>1
+06 10 4 ./work cu_test_up test 1
+o-quiet -auto_acc_if_foreign -work work
+tExplicit 1
+OE;O;6.2g;35
+Ecu_dlx_mp2
+w1526329240
+DP work mytypes AnBo7F8nR_2^TK12b3?:Q2
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab4/ex4.4/sim/CU_DLX_MP2.vhd
+F/home/ms18.4/Desktop/gr04_lab4/ex4.4/sim/CU_DLX_MP2.vhd
+l0
+L8
+VWZ0N<SC7]Va9R=jKP:@gk3
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Adlx_cu_rtl
+DP work mytypes AnBo7F8nR_2^TK12b3?:Q2
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work cu_dlx_mp2 WZ0N<SC7]Va9R=jKP:@gk3
+l122
+L45
+VnWW35V;f:CAi<P8abb_DQ1
+OE;C;6.2g;35
+32
+M4 ieee std_logic_1164
+M3 ieee std_logic_unsigned
+M2 ieee std_logic_arith
+M1 work mytypes
+o-work work
+tExplicit 1
+Ecu_test_up
+w1526254686
+DP work mytypes AnBo7F8nR_2^TK12b3?:Q2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab4/ex4.4/sim/cu_test_UP.vhd
+F/home/ms18.4/Desktop/gr04_lab4/ex4.4/sim/cu_test_UP.vhd
+l0
+L8
+VVMlhgThKZh4I8MgEz`GS]0
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Atest
+DP work mytypes AnBo7F8nR_2^TK12b3?:Q2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work cu_test_up VMlhgThKZh4I8MgEz`GS]0
+l60
+L21
+VU6LTYNASJQ_HYAEhB5Y_l1
+OE;C;6.2g;35
+32
+M5 ieee std_logic_1164
+M4 ieee std_logic_unsigned
+M3 ieee std_logic_arith
+M2 ieee numeric_std
+M1 work mytypes
+o-work work
+tExplicit 1
+Pmytypes
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+w1525875610
+8/home/ms18.4/Desktop/gr04_lab4/ex4.4/sim/myTypes.vhd
+F/home/ms18.4/Desktop/gr04_lab4/ex4.4/sim/myTypes.vhd
+l0
+L4
+VAnBo7F8nR_2^TK12b3?:Q2
+OE;C;6.2g;35
+32
+M1 ieee std_logic_1164
+o-work work
+tExplicit 1
