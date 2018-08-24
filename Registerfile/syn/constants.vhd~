@@ -1,0 +1,4 @@
+package CONSTANTS is
+   constant N_bit : integer := 32;
+   constant data_bit: integer := 64;
+end CONSTANTS;

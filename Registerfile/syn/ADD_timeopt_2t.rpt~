@@ -1,0 +1,37 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : registerfile_generic_n_bit32_data_bit64
+Version: Z-2007.03-SP1
+Date   : Thu Apr 19 01:12:34 2018
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: OUT1_reg[60]
+              (rising edge-triggered flip-flop)
+  Endpoint: OUT1[60] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  registerfile_generic_n_bit32_data_bit64
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  OUT1_reg[60]/CK (DFF_X1)                 0.00       0.00 r
+  OUT1_reg[60]/Q (DFF_X1)                  0.10       0.10 r
+  OUT1[60] (out)                           0.00       0.10 r
+  data arrival time                                   0.10
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

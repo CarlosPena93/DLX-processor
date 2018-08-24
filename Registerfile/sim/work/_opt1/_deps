@@ -1,0 +1,12 @@
+H 2141964 11 3 0 4 4 0 0 0 0
+L 4 ieee 19 $MODEL_TECH/../ieee
+L 3 std 18 $MODEL_TECH/../std
+L 4 work 6 ./work
+D 16 ./work.constants ITKlnJ7NWARoPn]QD[3883 1 1
+D 22 ./work.constants(body) ITKlnJ7NWARoPn]QD[3883 0 1
+D 30 ./work.registerfile_generic(a) aMVGdl5o9_`J`hDgMQK]50 2 1
+D 36 ./work.tbregisterfile_generic(testa) nV9@U>ZOLb]bb<Q>:?`4N2 3 1
+2 0  0 ITKlnJ7NWARoPn]QD[3883 0 0 1
+2 0  0 IGdbl<bRYbMPd`KJP9F493 1 1 1
+2 0  1 YNheiJ9[K0`An>HWkDaFA3 2 2 1
+2 0  1 hP7ICYYIzI>o9gM^?H?>W2 3 3 1

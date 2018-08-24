@@ -1,0 +1,62 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'registerfile_generic_n_bit32_data_bit64' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : registerfile_generic_n_bit32_data_bit64
+Version: Z-2007.03-SP1
+Date   : Wed May  2 14:19:09 2018
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: RESET (input port)
+  Endpoint: OUT1_reg[63]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  registerfile_generic_n_bit32_data_bit64
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock (input port clock) (rise edge)     0.00       0.00
+  input external delay                     0.00       0.00 r
+  RESET (in)                               0.00       0.00 r
+  U43991/ZN (INV_X1)                       0.03       0.03 f
+  U44648/Z (CLKBUF_X1)                     0.07       0.09 f
+  U38939/ZN (NAND3_X1)                     0.06       0.16 r
+  U39671/Z (BUF_X1)                        0.10       0.26 r
+  U39649/ZN (NOR3_X1)                      0.07       0.33 f
+  U39695/ZN (NAND2_X1)                     0.06       0.39 r
+  U39612/Z (BUF_X1)                        0.10       0.49 r
+  U44529/ZN (OAI22_X1)                     0.05       0.53 f
+  U44528/ZN (AOI221_X1)                    0.09       0.62 r
+  U44527/ZN (INV_X1)                       0.02       0.65 f
+  U44071/ZN (NOR4_X1)                      0.08       0.73 r
+  U44069/ZN (NAND2_X1)                     0.03       0.76 f
+  OUT1_reg[63]/D (DFF_X1)                  0.01       0.77 f
+  data arrival time                                   0.77
+
+  clock CLK (rise edge)                    2.00       2.00
+  clock network delay (ideal)              0.00       2.00
+  OUT1_reg[63]/CK (DFF_X1)                 0.00       2.00 r
+  library setup time                      -0.04       1.96
+  data required time                                  1.96
+  -----------------------------------------------------------
+  data required time                                  1.96
+  data arrival time                                  -0.77
+  -----------------------------------------------------------
+  slack (MET)                                         1.19
+
+
+1

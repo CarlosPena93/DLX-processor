@@ -1,0 +1,17 @@
+##############################################################
+#SCRIPT FOR SPEEDING UP and RECORDING the MULTIPLIER SYNTHESIS#
+# analyzing and checking vhdl netlist#
+# here the analyze command is used for each file from bottom to top #
+##############################################################
+analyze -library WORK -format vhdl {constants.vhd}
+analyze -library WORK -format vhdl {registerfile_generic.vhd}##############################################################
+# elaborating the top entity -- here supposed BOOTHMUL#
+# choose the architecture you want
+elaborate registerfile_generic -architecture A 
+##########################################
+# first compilation, without constraints #
+compile 
+# reporting riming and power after the first synthesis without constraints #
+report_timing > registerfile_generic_time_withoutconstraints.rpt
+report_area > registerfile_generic_twithoutconstraints.rpt
+

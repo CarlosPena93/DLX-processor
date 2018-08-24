@@ -1,0 +1,368 @@
+m255
+13
+cModel Technology
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sym
+T_opt
+o-quiet -auto_acc_if_foreign -work work
+tExplicit 1
+OE;O;6.2g;35
+T_opt1
+o-quiet -auto_acc_if_foreign -work work
+tExplicit 1
+OE;O;6.2g;35
+T_opt2
+VWR_WA_1<HUOQdhJ`b:XHU1
+06 22 22 ./work test_sipisoalu_generic test_sipisoalu_generic 1
+o-quiet -auto_acc_if_foreign -work work
+tExplicit 1
+OE;O;6.2g;35
+Ccfg_rf_beh
+aa
+eregisterfile_generic
+DA work registerfile_generic a aMVGdl5o9_`J`hDgMQK]50
+DP work constants 56c^8<XJ7ZB:7QTLJ;P9i2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work registerfile_generic h6Qo<6JDloZ2@zM_jaT:l2
+w1525200758
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/registerfile_generic.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/registerfile_generic.vhd
+l0
+L64
+V9e@B@Ck9D6JSKQQ]fCMJn2
+OE;C;6.2g;35
+32
+M5 ieee std_logic_1164
+M4 ieee std_logic_unsigned
+M3 ieee std_logic_arith
+M2 ieee numeric_std
+M1 work constants
+o-work work
+tExplicit 1
+Ccfg_testrf
+atesta
+etbregisterfile_generic
+DE work registerfile_generic h6Qo<6JDloZ2@zM_jaT:l2
+DC work cfg_rf_beh 9e@B@Ck9D6JSKQQ]fCMJn2
+DA work tbregisterfile_generic testa nV9@U>ZOLb]bb<Q>:?`4N2
+DP work constants 56c^8<XJ7ZB:7QTLJ;P9i2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work tbregisterfile_generic 7]iMGQ@gJb5@8:ADTSkVO2
+w1525202197
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/tb_registerfile_generic.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/tb_registerfile_generic.vhd
+l0
+L68
+VnfnF=X`HjB[Dkgcm9^W`h2
+OE;C;6.2g;35
+32
+M5 ieee std_logic_1164
+M4 ieee std_logic_unsigned
+M3 ieee std_logic_arith
+M2 ieee numeric_std
+M1 work constants
+o-work work
+tExplicit 1
+Pconstants
+w1525201878
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/constants.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/constants.vhd
+l0
+L3
+V56c^8<XJ7ZB:7QTLJ;P9i2
+OE;C;6.2g;35
+32
+b1
+o-work work
+tExplicit 1
+Bbody
+DB work constants 56c^8<XJ7ZB:7QTLJ;P9i2
+l0
+L3
+VITKlnJ7NWARoPn]QD[3883
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+nbody
+Eregister_file
+w1524055217
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/register_file.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/register_file.vhd
+l0
+L6
+VaC5N]?HJQGIh[C`1VhJ_;1
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Aa
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work register_file aC5N]?HJQGIh[C`1VhJ_;1
+l33
+L22
+V:RJ:@E;mYO9L6OQEfmI0Q0
+OE;C;6.2g;35
+32
+M4 ieee std_logic_1164
+M3 ieee std_logic_unsigned
+M2 ieee std_logic_arith
+M1 ieee numeric_std
+o-work work
+tExplicit 1
+Eregisterfile_generic
+w1525200758
+DP work constants 56c^8<XJ7ZB:7QTLJ;P9i2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/registerfile_generic.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/registerfile_generic.vhd
+l0
+L7
+Vh6Qo<6JDloZ2@zM_jaT:l2
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Aa
+DP work constants 56c^8<XJ7ZB:7QTLJ;P9i2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work registerfile_generic h6Qo<6JDloZ2@zM_jaT:l2
+l34
+L23
+VaMVGdl5o9_`J`hDgMQK]50
+OE;C;6.2g;35
+32
+M5 ieee std_logic_1164
+M4 ieee std_logic_unsigned
+M3 ieee std_logic_arith
+M2 ieee numeric_std
+M1 work constants
+o-work work
+tExplicit 1
+Esipisoalu
+w1525204611
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/sipisoalu.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/sipisoalu.vhd
+l0
+L6
+VX;=4GR10da6QlWiSc3`<W3
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Aa
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work sipisoalu X;=4GR10da6QlWiSc3`<W3
+l38
+L19
+VIG1HG?6TZOG_Pl76W@Smm0
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee std_logic_arith
+M1 ieee std_logic_unsigned
+o-work work
+tExplicit 1
+Esipisoalu_generic
+w1525205500
+DP work constants 56c^8<XJ7ZB:7QTLJ;P9i2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/sipisoalu_generic.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/sipisoalu_generic.vhd
+l0
+L7
+V2;5SU>BmUXB^hCbojZiEf3
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Aa
+DP work constants 56c^8<XJ7ZB:7QTLJ;P9i2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work sipisoalu_generic 2;5SU>BmUXB^hCbojZiEf3
+l40
+L21
+VJ7bJlPOYo6BdaB>6QD4iI1
+OE;C;6.2g;35
+32
+M4 ieee std_logic_1164
+M3 ieee std_logic_arith
+M2 ieee std_logic_unsigned
+M1 work constants
+o-work work
+tExplicit 1
+Esipisoalucontrol
+w1523527309
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/sipisoAluControl.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/sipisoAluControl.vhd
+l0
+L4
+VK4obZdIMS?B4na[JcEi@;0
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Afsm_opc
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work sipisoalucontrol K4obZdIMS?B4na[JcEi@;0
+l23
+L16
+V4daD;4WVWFCWmL8b`4ND=3
+OE;C;6.2g;35
+32
+M1 ieee std_logic_1164
+o-work work
+tExplicit 1
+Etbregisterfile
+w1523527309
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/tb_registerfile.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/tb_registerfile.vhd
+l0
+L5
+ViJez>7eH6nHo?g06J:hRP3
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Atesta
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work tbregisterfile iJez>7eH6nHo?g06J:hRP3
+l40
+L8
+V[3@WKJ_f41PM?d`dhlWKE3
+OE;C;6.2g;35
+32
+M1 ieee std_logic_1164
+o-work work
+tExplicit 1
+Etbregisterfile_generic
+w1525202197
+DP work constants 56c^8<XJ7ZB:7QTLJ;P9i2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/tb_registerfile_generic.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/tb_registerfile_generic.vhd
+l0
+L7
+V7]iMGQ@gJb5@8:ADTSkVO2
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Atesta
+DP work constants 56c^8<XJ7ZB:7QTLJ;P9i2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work tbregisterfile_generic 7]iMGQ@gJb5@8:ADTSkVO2
+l42
+L10
+VnV9@U>ZOLb]bb<Q>:?`4N2
+OE;C;6.2g;35
+32
+M5 ieee std_logic_1164
+M4 ieee std_logic_unsigned
+M3 ieee std_logic_arith
+M2 ieee numeric_std
+M1 work constants
+o-work work
+tExplicit 1
+Etest_sipisoalu_generic
+w1525205595
+DP work constants 56c^8<XJ7ZB:7QTLJ;P9i2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/tb_sipisoalu_generic.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/tb_sipisoalu_generic.vhd
+l0
+L6
+VL>9:lIj<F4_;@^7FW?DPh1
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Atest_sipisoalu_generic
+DP work constants 56c^8<XJ7ZB:7QTLJ;P9i2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work test_sipisoalu_generic L>9:lIj<F4_;@^7FW?DPh1
+l36
+L9
+VSeUYFX?eLKZ5jXb=bgV7b1
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work constants
+o-work work
+tExplicit 1
+Etestsipisoalu
+w1525204621
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/tb_sipisoalu.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.1/sim/tb_sipisoalu.vhd
+l0
+L5
+VHn6^_znm`?Xe9?N:^Ah6k1
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Atest
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work testsipisoalu Hn6^_znm`?Xe9?N:^Ah6k1
+l34
+L8
+V^?fJ2zLa4iXRi4SVoBG2f3
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 ieee numeric_std
+o-work work
+tExplicit 1
