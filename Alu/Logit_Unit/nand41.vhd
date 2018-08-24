@@ -1,0 +1,18 @@
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+ 
+entity nand3 is port(
+	x: in std_logic;
+	y: in std_logic;
+	z: in std_logic;
+	f: out std_logic);
+end nand3;
+ 
+architecture behav of nand3 is
+ 
+begin
+f <= x nand y nand z;
+ 
+ 
+end behav;

@@ -1,0 +1,15 @@
+library IEEE;
+use IEEE.std_logic_1164.all; --  libreria IEEE con definizione tipi standard logic
+
+entity 3bit_shifter is
+	GENERIC(N_BIT:integer);
+	Port (	A:	In	std_logic_vector(N_bit*2-1 downto 0);
+		Y:	Out	std_logic_vector(N_bit*2-1 downto 0));
+end 3bit_shifter;
+
+architecture BEHAVIORAL of 3bit_shifter is
+signal interm: std_logic_vector(N_bit*2+1 downto 0);
+begin
+	interm <= A&("00");
+	Y<=interm(N_bit*2+1 downto 2); 
+end BEHAVIORAL;

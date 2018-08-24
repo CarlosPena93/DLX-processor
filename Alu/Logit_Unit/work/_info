@@ -1,0 +1,88 @@
+m255
+13
+cModel Technology
+d/home/ms18.4/Desktop/project/Alu/Logit_Unit
+T_opt
+VPoNQ6ezR40Z2iVkg;I0>91
+06 13 15 ./work tb_logic_unit test_logic_unit 1
+o-quiet -auto_acc_if_foreign -work work
+tExplicit 1
+OE;O;6.2g;35
+Pconstants
+w1531941814
+8/home/ms18.4/Desktop/project/Alu/Logit_Unit/constants.vhd
+F/home/ms18.4/Desktop/project/Alu/Logit_Unit/constants.vhd
+l0
+L1
+VBKzh:1F4`e[bPPQIn1njA0
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Elogic_unit
+w1532124677
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/project/Alu/Logit_Unit/Logic_unit.vhd
+F/home/ms18.4/Desktop/project/Alu/Logit_Unit/Logic_unit.vhd
+l0
+L6
+VE_I0LTkH5n@X@??7jCFeV3
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Astructural
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_unsigned hEMVMlaNCR^<OOoVNV;m90
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work logic_unit E_I0LTkH5n@X@??7jCFeV3
+l25
+L15
+V>cPR>;gNh;Vd_oMG[5h7<0
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee std_logic_unsigned
+M1 ieee std_logic_arith
+o-work work
+tExplicit 1
+Enand3
+w1532049129
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/project/Alu/Logit_Unit/nand41.vhd
+F/home/ms18.4/Desktop/project/Alu/Logit_Unit/nand41.vhd
+l0
+L5
+V<?8`;JeaiP^2^4>I[o:=T1
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Etb_logic_unit
+w1532125472
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/project/Alu/Logit_Unit/TB_Logic_unit.vhd
+F/home/ms18.4/Desktop/project/Alu/Logit_Unit/TB_Logic_unit.vhd
+l0
+L5
+VfW_igh2K7QiBn4SlR44^D3
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Atest_logic_unit
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work tb_logic_unit fW_igh2K7QiBn4SlR44^D3
+l23
+L9
+VK2_lJ4AjGgO@Ac8H_H>1G3
+OE;C;6.2g;35
+32
+M2 ieee std_logic_1164
+M1 ieee numeric_std
+o-work work
+tExplicit 1

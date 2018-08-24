@@ -1,0 +1,115 @@
+# //  ModelSim SE 6.2g Feb 21 2007 Linux 2.6.18-410.el5
+# //
+# //  Copyright 1991-2007 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+vcom -reportprogress 300 -work work /home/ms18.4/Desktop/project/Alu/comparation/constants.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Compiling package constants
+# -- Compiling package body constants
+# -- Loading package constants
+vcom -reportprogress 300 -work work /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package constants
+# -- Compiling entity comparator
+# -- Compiling architecture structural of comparator
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(17): (vcom-1136) Unknown identifier "log2".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(17): Type error in range expression.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(18): near "levels": expecting: '('
+vcom -reportprogress 300 -work work /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package constants
+# -- Compiling entity comparator
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(12): (vcom-1136) Unknown identifier "log2".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(12): Bad expression in left bound of range expression.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(12): Type error in range expression.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(14): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/ms18.4/Desktop/project/Alu/comparation/constants.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Compiling package constants
+# -- Compiling package body constants
+# -- Loading package constants
+vcom -reportprogress 300 -work work /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package constants
+# -- Compiling entity comparator
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(12): (vcom-1136) Unknown identifier "log2".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(12): Bad expression in left bound of range expression.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(12): Type error in range expression.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(14): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/ms18.4/Desktop/project/Alu/comparation/constants.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Compiling package constants
+# -- Compiling package body constants
+# -- Loading package constants
+vlib work
+vcom -reportprogress 300 -work work /home/ms18.4/Desktop/project/Alu/comparation/constants.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Compiling package constants
+# -- Compiling package body constants
+# -- Loading package constants
+vcom -reportprogress 300 -work work /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package constants
+# -- Compiling entity comparator
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(12): (vcom-1136) Unknown identifier "log2".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(12): Bad expression in left bound of range expression.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(12): Type error in range expression.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(14): VHDL Compiler exiting
+vcom -reportprogress 300 -work work /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd
+# Model Technology ModelSim SE vcom 6.2g Compiler 2007.02 Feb 21 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package constants
+# -- Compiling entity comparator
+# -- Compiling architecture structural of comparator
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(18): (vcom-1136) Unknown identifier "log2".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(18): Type error in range expression.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(27): (vcom-1136) Unknown identifier "log2".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(27): Cannot resolve expression type.
+# ** Warning: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(27): (vcom-1147) Range in FOR GENERATE must be static.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(28): No feasible entries for infix operator "**".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(28): Bad expression in right operand of infix expression "/".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(28): Bad expression in left operand of infix expression "-".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(28): Bad expression in right bound of range expression.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(28): Cannot resolve expression type.
+# ** Warning: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(28): (vcom-1147) Range in FOR GENERATE must be static.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(29): No feasible entries for infix operator "-".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(29): No feasible entries for infix operator "*".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(29): No feasible entries for infix operator "-".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(29): No feasible entries for infix operator "*".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(29): Bad expression in left operand of infix expression "-".
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(29): Constant "x" is type (error); expecting type levels.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(29): Constant "i" is type (error); expecting type std.standard.natural.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(29): Type error resolving infix expression "-" as type levels.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(29): Type error resolving infix expression "*" as type std.standard.natural.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(29): Type error resolving infix expression "-" as type levels.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(29): Type error resolving infix expression "-" as type std.standard.natural.
+# ** Error: /home/ms18.4/Desktop/project/Alu/comparation/comparator.vhd(36): near "output": expecting: <= :=

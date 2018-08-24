@@ -1,0 +1,111 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+USE ieee.numeric_std.all;
+use ieee.std_logic_signed.all;
+
+
+entity boothmul is 
+	GENERIC( N_BIT:INTEGER);
+	port(	A:IN std_logic_vector(N_BIT-1 downto 0);-- we supose A is always positive
+		B:IN std_logic_vector(N_BIT-1 downto 0);
+		multi:out std_logic_vector(N_BIT*2-1 downto 0)
+		);
+end boothmul;
+
+architecture structural of boothmul is 
+
+component MUX51_behav 
+	generic(N_BIT:integer);
+	Port (	A:	In	std_logic_vector(N_bit*2 -1 downto 0); --0
+		B:	In	std_logic_vector(N_bit*2 -1 downto 0); --A
+		C:	In	std_logic_vector(N_bit*2-1 downto 0);-- -A
+		D:	In	std_logic_vector(N_bit*2-1 downto 0);-- 2A
+		E:	In	std_logic_vector(N_bit*2-1 downto 0);-- -2A
+
+		S:	In	std_logic_vector(2 downto 0);
+		Y:	Out	std_logic_vector(N_bit*2-1 downto 0));
+end component;
+
+component RCA_STRUCT-- used for the sum
+	generic (DRCAS :Time;DRCAC :Time;N_BIT :INTEGER );
+	Port (	A:	In	std_logic_vector(N_BIT-1 downto 0);
+		B:	In	std_logic_vector(N_BIT-1 downto 0);
+		Ci:	In	std_logic;
+		S:	Out	std_logic_vector(N_BIT-1 downto 0);
+		Co:	Out	std_logic);
+end component;
+
+component bit_shifter -- used fot the shift
+	GENERIC(N_BIT:integer;Shift:integer);
+	Port (	A:	In	std_logic_vector(N_bit*2-1 downto 0);
+		Y:	Out	std_logic_vector(N_bit*2-1 downto 0));
+end component;
+
+
+type in_matrix is array ((N_bit/2)-1 downto 0) of std_logic_vector(N_BIT*2-1 downto 0); --tipe matrix for the diferent mux inputs
+
+type Sum_matrix is array ((N_bit)-2 downto 0) of std_logic_vector(N_BIT*2-1 downto 0); --matrix for the input of the diferents sums
+signal A0V,A1V,A1NV,A2V,A2NV: in_matrix;
+
+signal Bint :std_logic_vector(N_BIT downto 0);-- B signal added 1 position for the encoder
+
+type encoder_matrix is array ((N_bit/2)-1 downto 0) of std_logic_vector(2 downto 0);-- matrix contaning the value of the encoders
+
+signal encoder: encoder_matrix;
+signal SumIn:Sum_matrix;
+signal interm: std_logic_vector(N_bit*2 downto 0);--use a longer array to concatanate the first shift
+begin 
+	
+	Bint(N_bit downto 1)<=B;-- we assign the value of B to the high part of Bint
+	Bint(0)<='0';	-- the first bit is assign to 0
+
+	A0V(0)<=(Others =>'0');-- first value is 0
+	A1V(0)(N_bit-1 downto 0)<=A ;--first part is A
+	
+	A1V(0)(N_bit*2-1 downto N_bit)<= (Others =>'0')  when A(N_bit-1)='0' else  (Others =>'1'); -- second part depends of the sign of A
+	A1NV(0)<=-A1V(0);--    -A
+
+	Interm<=A1V(0)&'0';
+	A2V(0)<=Interm(N_bit*2-1 downto 0);
+	--frst_shift:bit_shifter -- we use the bit shifter for multiplying by 2
+	--		generic map(N_bit=>N_bit,shift=>1)
+	--		Port Map(A1V(0),A2V(0));
+	A2NV(0)<= -A2V(0);
+	
+	cycle_encoder: for I in 1 to (N_BIt/2) generate  --define the encoderns matrix
+		encoder(I-1)<=Bint((I*2) downto  I*2-2 ); 
+		end generate;
+	
+	first_mux1: MUX51_behav --the first mux diferent from the the others
+		generic map(N_bit)
+		Port Map(A0V(0),A1V(0),A1NV(0),A2V(0),A2NV(0),encoder(0),SumIn(0));-- we conect to the mux, the sums and the encoder
+	cycle: for I in 1 to (N_BIt/2)-1 generate
+	
+		the_rest: if I>0 generate
+			
+		shifts0:bit_shifter  --use the component bit shifter to multiblie by 4 the next signal in the matrix
+			generic map(N_bit=>N_bit,shift=>2)
+			Port Map(A0V(I-1),A0V(I));
+		shifts1:bit_shifter --use the component bit shifter to multiblie by 4 the next signal in the matrix
+			generic map(N_bit=>N_bit,shift=>2)
+			Port Map(A1V(I-1),A1V(I));
+		
+		A1NV(I)<=-A1V(I);-- use the negated
+		shifts2:bit_shifter 
+			generic map(N_bit=>N_bit,shift=>2)
+			Port Map(A2V(I-1),A2V(I));
+	
+		A2NV(I)<=-A2V(I);
+		muxes:MUX51_behav
+			generic map(N_bit)
+			Port Map(A0V(I),A1V(I),A1NV(I),A2V(I),A2NV(I),encoder(I),SumIn((I-1)*2+1));--conects the mux to the signal we just instantiated, to the sum and encoder
+		sums: RCA_STRUCT-- at the end of the cicle we conect the diferents cables to the sum 
+			generic map(DRCAS=>0 ns,DRCAC=>0 ns ,N_bit=>N_bit*2)
+			Port Map(SumIn((I-1)*2),SumIn((I-1)*2+1),'0',SumIn(I*2));
+	
+		end generate the_rest;
+
+	end generate;
+
+	multi<=SumIn(N_bit-2);-- we take the last value of the sum.
+end structural;
