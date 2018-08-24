@@ -1,0 +1,137 @@
+library ieee; 
+use ieee.std_logic_1164.all; 
+use ieee.std_logic_unsigned.all;
+use WORK.constants.all;
+
+
+entity DLX is 
+	generic(N_BIT:integer;NumBit:integer;CBIT:integer;x:integer;);
+	port(
+		A: in std_logic_vector(NumBit-1 downto 0);
+		B: in std_logic_vector(NumBit-1 downto 0);
+		Control: in std_logic_vector(X-1 downto 0);-- tengo que cambiar lo del control
+		Output: out std_logic_vector(NumBit-1 downto 0));
+end DLX;
+
+architecture structural of DLX is
+
+component CU_DLX_MP2 
+	generic(MEM_SIZE : integer := 19;--ARRAY FOR THE NUMBER OF FUNCTIONS
+		CONTROL_w: integer := 11;--vector containing the configuration of the signal
+		FUNC_SIZE          :     integer := 11;  -- Func Field Size for R-Type Ops
+    		OP_CODE_SIZE       :     integer := 6;  -- Op Code Size
+    		ALU_OPC_SIZE       :     integer := 2;  -- ALU Op Code Word Size
+    		IR_SIZE            :     integer := 32;  -- Instruction Register Size  
+		MICROCODE_MEM_SIZE : integer := 32;  -- Microcode Memory Size 27
+		INSTRUCTIONS_EXECUTION_CYCLES: integer:=3;
+    		RELOC_MEM_SIZE     : integer := 16  -- Microcode Relocation 14
+	);
+       	port (
+              -- FIRST PIPE STAGE OUTPUTS
+              EN1    : out std_logic;               -- enables the register file and the pipeline registers
+              RF1    : out std_logic;               -- enables the read port 1 of the register file
+              RF2    : out std_logic;               -- enables the read port 2 of the register file
+              WF1    : out std_logic;               -- enables the write port of the register file
+              -- SECOND PIPE STAGE OUTPUTS
+              EN2    : out std_logic;               -- enables the pipe registers
+              S1     : out std_logic;               -- input selection of the first multiplexer
+              S2     : out std_logic;               -- input selection of the second multiplexer
+	      ALU_OPCODE: out std_logic_vector(ALU_OPC_SIZE-1 downto 0); 
+              --ALU1   : out std_logic;               -- alu control bit
+              --ALU2   : out std_logic;               -- alu control bit
+              -- THIRD PIPE STAGE OUTPUTS
+              EN3    : out std_logic;               -- enables the memory and the pipeline registers
+              RM     : out std_logic;               -- enables the read-out of the memory
+              WM     : out std_logic;               -- enables the write-in of the memory
+              S3     : out std_logic;               -- input selection of the multiplexer
+              -- INPUTS
+	      OPCODE : in  std_logic_vector(OP_CODE_SIZE - 1 downto 0);
+              FUNC   : in  std_logic_vector(FUNC_SIZE - 1 downto 0); 
+	      --IR_IN              : in  std_logic_vector(IR_SIZE - 1 downto 0);              
+              Clk : in std_logic;
+              Rst : in std_logic);                  -- Active Low
+end component;
+
+component registerfile_generic 
+ generic(n_bit:integer;data_bit:integer);
+ port ( CLK: 		IN std_logic;
+         RESET: 	IN std_logic;
+	 ENABLE: 	IN std_logic;
+	 RD1: 		IN std_logic;
+	 RD2: 		IN std_logic;
+	 WR: 		IN std_logic;
+	 ADD_WR: 	IN std_logic_vector(log2(n_bit) downto 0);
+	 ADD_RD1: 	IN std_logic_vector(log2(n_bit) downto 0);
+	 ADD_RD2: 	IN std_logic_vector(log2(n_bit) downto 0);
+	 DATAIN: 	IN std_logic_vector(data_bit-1 downto 0);
+         OUT1: 		OUT std_logic_vector(data_bit-1 downto 0);
+	 OUT2: 		OUT std_logic_vector(data_bit-1 downto 0));
+end component;
+
+
+component memory_generic
+ generic(n_bit:integer;data_bit:integer);
+ port (
+         RESET: 	IN std_logic;
+	 ENABLE: 	IN std_logic;
+	 RD: 		IN std_logic;
+	 WR: 		IN std_logic;
+	 ADD_WR: 	IN std_logic_vector(n_bit downto 0);
+	 ADD_RD1: 	IN std_logic_vector(n_bit downto 0);
+	 ADD_RD2: 	IN std_logic_vector(n_bit downto 0);
+	 DATAIN: 	IN std_logic_vector(data_bit-1 downto 0);
+         OUT1: 		OUT std_logic_vector(data_bit-1 downto 0);
+	 OUT2: 		OUT std_logic_vector(data_bit-1 downto 0));
+end component;
+
+
+
+
+entity ALU is 
+	generic(N_BIT:integer;NumBit:integer;CBIT:integer);
+	port(
+		A: in std_logic_vector(NumBit-1 downto 0);
+		B: in std_logic_vector(NumBit-1 downto 0);
+		Control: in std_logic_vector(NumBit-1 downto 0);
+		Output: out std_logic_vector(NumBit-1 downto 0));
+end ALU;
+
+
+
+
+signal Gen_signal_vector :std_logic_vector(CBIT-2 downto 0);-- contains all the values of the calculated generates
+signal prop_signal_vector:std_logic_vector(CBIT-2 downto 1); -- contains all the values of the calculated propagates.We don't need the first propagte
+signal carry_signal_vector:std_logic_vector(CBIT-2 downto 0);-- signal containing all the carries
+
+	
+begin
+
+	
+	firstgen1: GEN1 --we instantiate the first generate that is diferent from the others because of the number of bits G(4:1)
+		generic map(N_bit)
+		port map(A(N_bit-1 downto 0),B(N_bit-1 downto 0),Cin,Gen_Signal_vector(0));
+ 	carry_signal_vector(0)<=Gen_Signal_vector(0); --the first generate is the first carry 
+
+	--the next cycle follow this patern :
+		--G(24:1)=G(24:21)+P(24:21)*G(16:1)
+		--note that in this case G(16:1) must always be the previous carry.this way we can start from the first carry adn calculate the second from the first one and the third from the second one and so on
+		
+	NETS:for I in 2 to CBIT-1 generate  --this cycle permits us te create all the carries
+		cablesgen:GEN2
+			generic map(N_bit)
+			Port Map(A(I*N_bit-1 downto (I*N_bit-N_bit)),B(I*N_bit-1 downto (I*N_bit-N_bit)),Gen_signal_vector(I-1));--conects to the generate the a part of the input A and B depending on the number of bits and on the output we conect to the Gen_signal vector
+
+		cablesprop:PROPAGATE
+			generic map(N_bit)
+			Port Map(A(I*N_bit-1 downto (I*N_bit-N_bit)),B(I*N_bit-1 downto (I*N_bit-N_bit)),prop_signal_vector(I-1));--we follow the same procedure as before 
+	
+		carry_signal_vector(I-1)<= Gen_signal_vector(I-1) or (prop_signal_vector(I-1) and carry_signal_vector(I-2));
+	end generate;-- ones we have calculated the values of the gens and the propagate we calculate the carry using the previous carry
+	
+	carriesout: for I in CBIT-2 downto 0 generate -- we assing all the carrys to the output
+		cout(I)<=carry_signal_vector(I);
+	
+	end generate;
+	     
+
+end structural;

@@ -1,0 +1,223 @@
+m255
+13
+cModel Technology
+d/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2
+Pconstants
+w1525197177
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/constants.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/constants.vhd
+l0
+L3
+VQ5;Q^20lP1mS5I09Cn86O2
+OE;C;6.2g;35
+32
+b1
+o-work work
+tExplicit 1
+Bbody
+DB work constants Q5;Q^20lP1mS5I09Cn86O2
+l0
+L3
+VITKlnJ7NWARoPn]QD[3883
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+nbody
+Edecoder_behav_generic
+w1525299316
+DP work constants Q5;Q^20lP1mS5I09Cn86O2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/DECODER_BEHAV_GENERIC.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/DECODER_BEHAV_GENERIC.vhd
+l0
+L6
+VC8Vb[EVBSdlM9YPMC4S7j0
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Abehav
+DP work constants Q5;Q^20lP1mS5I09Cn86O2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work decoder_behav_generic C8Vb[EVBSdlM9YPMC4S7j0
+l21
+L16
+V<aI6fM]1@Rm[m=CeNVZWC2
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work constants
+o-work work
+tExplicit 1
+Edecoder_window
+w1525198199
+DP work constants Q5;Q^20lP1mS5I09Cn86O2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/decoder_window.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/decoder_window.vhd
+l0
+L6
+VR43PNI6LD6c`Se8QV1`Oz2
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Abehav
+DP work constants Q5;Q^20lP1mS5I09Cn86O2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work decoder_window R43PNI6LD6c`Se8QV1`Oz2
+l22
+L17
+V5m:de?LFLC4Ei6oaoU:1N0
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work constants
+o-work work
+tExplicit 1
+Efd
+w1525301426
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/fd.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/fd.vhd
+l0
+L4
+Vf0d=`=<31g:<8^8ejo[_S0
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Apippo
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work fd f0d=`=<31g:<8^8ejo[_S0
+l20
+L18
+VV@4Uz;n1Vic4iWJS==Bdz0
+OE;C;6.2g;35
+32
+M1 ieee std_logic_1164
+o-work work
+tExplicit 1
+Eregister_wind_2
+w1531417424
+DP work constants Q5;Q^20lP1mS5I09Cn86O2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/REGISTER_Wind_2.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/REGISTER_Wind_2.vhd
+l0
+L6
+VmDgAB>4]>nUMPaL2fVifm0
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Astructural
+DP work constants Q5;Q^20lP1mS5I09Cn86O2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work register_wind_2 mDgAB>4]>nUMPaL2fVifm0
+l119
+L30
+Vi]HBlKSb=bda2aeiPLcMh2
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work constants
+o-work work
+tExplicit 1
+Erf_control
+w1525177461
+DP work constants Q5;Q^20lP1mS5I09Cn86O2
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_signed <9<Kcl:S52:oW`F]FQhb20
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/rf_control.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/rf_control.vhd
+l0
+L7
+V1Nj^T]K2m1N`3oA5;lJ6^0
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Ar
+DP work constants Q5;Q^20lP1mS5I09Cn86O2
+DP ieee std_logic_arith GJbAT?7@hRQU9IQ702DT]2
+DP ieee std_logic_signed <9<Kcl:S52:oW`F]FQhb20
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work rf_control 1Nj^T]K2m1N`3oA5;lJ6^0
+l46
+L39
+V^dKf9hk^AeIURFTODWoXh2
+OE;C;6.2g;35
+32
+M5 ieee std_logic_1164
+M4 ieee numeric_std
+M3 ieee std_logic_signed
+M2 ieee std_logic_arith
+M1 work constants
+o-work work
+tExplicit 1
+Etb_register_wind_2
+w1531418974
+DP work constants Q5;Q^20lP1mS5I09Cn86O2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/tb_register_wind (copy).vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/tb_register_wind (copy).vhd
+l0
+L6
+V=Y7bm];Y:^eb^<9;6SKBX3
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Atest_register_wind_2
+DP work constants Q5;Q^20lP1mS5I09Cn86O2
+DP ieee numeric_std =NSdli^?T5OD8;4F<blj<3
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work tb_register_wind_2 =Y7bm];Y:^eb^<9;6SKBX3
+l55
+L10
+Vm``1^Z;LA3b_7zRShfn9:3
+OE;C;6.2g;35
+32
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work constants
+o-work work
+tExplicit 1
+Etri_state_buffer
+w1531345663
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+8/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/tri_state_buffer.vhd
+F/home/ms18.4/Desktop/gr04_lab3/ex3.1.3/sim/Register_wind_2/tri_state_buffer.vhd
+l0
+L4
+V2DK3T<Gmm<@6JDCOcSRTi2
+OE;C;6.2g;35
+32
+o-work work
+tExplicit 1
+Abehavioral
+DP ieee std_logic_1164 GH1=`jDDBJ=`LM;:Ak`kf2
+DE work tri_state_buffer 2DK3T<Gmm<@6JDCOcSRTi2
+l13
+L11
+VKigdQNbKBCDhTN?JnoaiD3
+OE;C;6.2g;35
+32
+M1 ieee std_logic_1164
+o-work work
+tExplicit 1
